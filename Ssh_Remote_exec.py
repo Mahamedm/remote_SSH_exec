@@ -4,7 +4,6 @@ import paramiko as pm
 # ui = str(input('nmap_ip: '))
 # command = f'nmap -sV -v {ui}'
 
-
 class ssh:
     @staticmethod
     def routine(ip, uname, passwd, port):
@@ -18,12 +17,12 @@ class ssh:
                 stdin, stdout, stderr = s.exec_command(ui)
                 res = stdout.readlines()
                 filt = re.findall(r"'.*?\'", str(res))
-                print(filt)
+                return filt
         except KeyboardInterrupt:
             print("connection closed!")
 
 if __name__=='__main__':
     s = ssh()
     ip, uname, passwd, port = input("Ip: "), input("Username: "), input("Password: "), input("Port: ")
-    s.routine(ip=ip, uname=uname, passwd=passwd, port=port)
+    print(s.routine(ip=ip, uname=uname, passwd=passwd, port=port))
 
