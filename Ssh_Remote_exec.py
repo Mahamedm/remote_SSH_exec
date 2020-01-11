@@ -22,8 +22,8 @@ class ssh:
         except KeyboardInterrupt:
             print("connection closed!")
 
-
-s = ssh()
-ip, uname, passwd, port = input("Ip: "), input("Username: "), input("Password: "), input("Port: ")
-s.routine(ip=ip, uname=uname, passwd=passwd, port=port)
+if __name__=='__main__':
+    s = ssh()
+    ip, uname, passwd, port = input("Ip: "), input("Username: "), input("Password: "), input("Port: ")
+    s.routine(ip=ip, uname=uname, passwd=passwd, port=port)
 
