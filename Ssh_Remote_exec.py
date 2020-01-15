@@ -1,8 +1,6 @@
 import re
 import paramiko as pm
 
-# ui = str(input('nmap_ip: '))
-# command = f'nmap -sV -v {ui}'
 
 class ssh:
     @staticmethod
